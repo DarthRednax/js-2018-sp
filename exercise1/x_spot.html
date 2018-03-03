@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <style>
+      .boxed {
+        border: 1px solid black ;
+        width: 40px;
+        height: 40px;
+      }
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1" class="centered">
+    </div>
+  </body>
+  <script>
+    var num = Number(prompt("How Wide?"))
+    var element = document.getElementById("div1");
+    for (var i = 0; i < num; i++) {
+      for (var j = 0; j < num; j++) {
+        var box = document.createElement("div");
+        box.setAttribute("class", "boxed");
+
+        if ((i==j)||(i==(num-j-1))){
+            box.setAttribute("style", "background-color: black; position: absolute; left: "+String(50*j)+"px; top: "+String(50*i)+"px;");
+        } else {
+            box.setAttribute("style", "position: absolute; left: "+String(50*j)+"px; top: "+String(50*i)+"px;");
+        }
+        element.appendChild(box);
+      }
+    }
+    element.setAttribute("style", "width: "+50*num+"px;  height:"+50*num+"px;;");
+  </script>
+</html>
