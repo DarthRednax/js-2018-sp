@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <p id = "words"></p>
+  </body>
+  <script>
+    function generate(array){
+      var s = ""
+      var a =  array.length
+      var b = array[0].length
+      for (i=0;i < (a); i++){
+        for (j=0;j < (b); j++){
+          s = s + array[j][i]
+        }
+        if (i < (a-1)){
+          s = s + " "
+        }
+      }
+      document.getElementById("words").innerHTML = s
+    }
+    generate([['J','L','L','M']
+            ,['u','i','i','a']
+            ,['s','v','f','n']
+            ,['t','e','e','']])
+  </script>
+</html>
