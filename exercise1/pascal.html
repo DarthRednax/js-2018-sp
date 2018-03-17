@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+  <input id = "in"></input>
+  <button onclick="pas()">create triangle</button>
+  <p style = "text-align: center;" id = "out"></p>
+  <script>
+    function factorialize(num) {
+      if (num < 0)
+        return -1;
+      else if (num == 0)
+        return 1;
+      else {
+        return (num * factorialize(num - 1));
+      }
+    }
+    function ncr(n,r){
+      return (factorialize(n)/(factorialize(n-r)*factorialize(r)))
+    }
+    function pas(){
+      h = Number(document.getElementById('in').value) -1
+      console.log(h)
+      var txt = ""
+//      var tri = []
+      for(i=0;i<h+1;i++){
+//        tri[i]= []
+        for(j=0;j<i+1;j++){
+  //        tri[i][j] = ncr(i,j)
+          txt = txt+Math.floor(ncr(i,j)).toString() + " "
+        }
+        txt = txt + "<br> "
+      }
+      document.getElementById('out').innerHTML = txt
+    }
+  </script>
+</body>
+</html>
