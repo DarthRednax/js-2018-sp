@@ -1,0 +1,27 @@
+<html>
+  <head>
+  </head>
+  <body>
+
+
+    <script>
+      function basicSort(array){
+        var count = 0
+        while (0==0){
+          for(i=0;i<array.length-1;i++){
+            if (array[i] > array[i+1]){
+              var b = array[i];
+              array[i] = array[i+1];
+              array[i+1] = b;
+              count++
+            }
+          }
+          if (count == 0){
+            return array
+          }else{count = 0}
+        }
+      }
+      alert(basicSort([98,39,68,23,47]))
+    </script>
+  </body>
+</html>
